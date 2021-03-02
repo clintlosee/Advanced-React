@@ -38,7 +38,7 @@ export default function CreateProduct() {
     description: 'These are nice shoes',
   });
 
-  const [createProduct, { loading, error, data }] = useMutation(
+  const [createProduct, { data, loading, error }] = useMutation(
     CREATE_PRODUCT_MUTATION,
     {
       variables: inputs,

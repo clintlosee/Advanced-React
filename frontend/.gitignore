@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # next.js build output
-.next/**
+.next
 
 # Runtime data
 pids

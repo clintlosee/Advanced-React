@@ -15,5 +15,9 @@
     "statusBar.foreground": "#15202b",
     "statusBarItem.hoverBackground": "#cc9e00"
   },
-  "peacock.color": "#FFC600"
+  "peacock.color": "#FFC600",
+  "cSpell.ignoreWords": [
+    "mutation",
+    "signin"
+  ]
 }

@@ -5,7 +5,7 @@ import { useUser } from './User';
 
 export default function Nav() {
   const user = useUser();
-  console.log('user:', user);
+
   return (
     <NavStyles>
       <Link href="/products">products</Link>

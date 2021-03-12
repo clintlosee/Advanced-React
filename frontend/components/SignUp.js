@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import Form from './styles/Form';
 import ErrorMessage from './ErrorMessage';
 import useForm from '../lib/useForm';
-import { CURRENT_USER_QUERY } from './User';
+// import { CURRENT_USER_QUERY } from './User';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
@@ -26,7 +26,7 @@ export default function SignUp() {
     password: '',
   });
 
-  const [signup, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
+  const [signup, { data, error }] = useMutation(SIGNUP_MUTATION, {
     variables: inputs,
     // refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });

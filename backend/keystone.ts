@@ -2,6 +2,7 @@
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
+import { CartItem } from './schemas/CartItem';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import 'dotenv/config';
@@ -11,6 +12,7 @@ import {
 } from '@keystone-next/keystone/session'
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
+import { extendGraphqlSchema } from './mutations';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits';
@@ -58,7 +60,9 @@ export default withAuth(config({
     User,
     Product,
     ProductImage,
+    CartItem
   }),
+  extendGraphqlSchema: extendGraphqlSchema,
   ui: {
     // show the UI only for people who pass this test
     isAccessAllowed: ({ session }) => {
